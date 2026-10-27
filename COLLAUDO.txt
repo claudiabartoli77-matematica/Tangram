@@ -1,3 +1,6 @@
+AGGIORNAMENTO 1.3
+1078 controlli automatici superati. Riprodotto parallelogramma speculare accanto al vuoto del quadrato ruotato: ribaltamento assistito restituisce perimetro 4 senza sovrapposizioni. Verificata conversione coordinate con bande laterali del canvas. Chrome desktop: layout contenuto nella finestra; selezione del parallelogramma via puntatore e doppio ribaltamento con ritorno a perimetro 4. Non collaudato su tablet fisico.
+
 AGGIORNAMENTO 1.2 — 27 ottobre 2026
 1074 controlli automatici superati. Regressioni: contatto con bordo a distanza zero non impedisce l’allineamento dei vertici; incastro di ciascuno dei sette pezzi in 8 orientamenti e nelle due immagini speculari; perimetro del quadrato ricostruito sempre 4; riempimento conservato nel rendering libero. Browser Chrome: pulsante quadrato, perimetro 4, riempimento e cambio modalità, prato fiorito. Nessuna verifica su dispositivo fisico tablet/LIM.
 

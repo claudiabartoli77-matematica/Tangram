@@ -51,9 +51,26 @@ function scaleControls(){let v=state.copies[sceneSelected]||state.copies[0];$('s
 function nextChallenge(id=null){if(busy())return;if(!id){let pool=SAGOME.filter(s=>!data.done.includes(s.id));if(!pool.length){if(!confirm('Hai completato tutte le sagome! Iniziare una nuova raccolta? I risultati in galleria rimangono.'))return;data.done=[];pool=SAGOME}id=pool[Math.floor(Math.random()*pool.length)].id}fresh('discover',id)}
 function validate(){if(busy())return;let ps=used(),n=state.pieces.reduce((s,p,i)=>s+(p.used?NUM[i]:0),0);if(state.mode!=='fraction'&&ps.length!==7){say('Porta tutti e sette i pezzi dal vassoio al piano a sinistra.');return}if(state.mode==='fraction'&&n!==state.target){say('La somma è '+fraction(n)+'. Cerca di ottenere '+fraction(state.target)+'.');return}if(Geo.overlap(ps.map(p=>p.poly))>1e-6){say('Ci sono pezzi sovrapposti: separali e riprova.');return}if(state.mode==='discover'&&Geo.match(ps.map(p=>p.poly),targets())>.008){say('Il contorno non coincide ancora con la sagoma. Controlla gli incastri.');return}state.solved=true;state.phase='paint';state.pieces.forEach(p=>p.color='#ffffff');state.colored=false;undo=[];say(state.mode==='discover'?'Figura ricostruita! Aiuti richiesti: '+state.hints+(state.hints===0?' · Una stella per te!':' · Potrai riprovare dalla galleria con meno aiuti.'):'La tua figura è pronta da colorare!');sync();render();persist()}
 function rotateSelected(deg){if(busy()||state.phase!=='compose')return;placeSelected(Geo.rotate(state.pieces[selected].poly,deg),{feedback:true});render();persist()}
-function flipSelected(){if(busy()||state.phase!=='compose')return;let p=state.pieces[selected],c=Geo.center(p.poly);placeSelected(p.poly.map(v=>[2*c[0]-v[0],v[1]]),{feedback:true});render();persist()}
+function flipSelected(){
+ if(busy()||state.phase!=='compose')return;
+ let piece=state.pieces[selected],c=Geo.center(piece.poly),mirrored=piece.poly.map(v=>[2*c[0]-v[0],v[1]]);
+ // A reflection about the centre may collide with neighbours even when the reflected
+ // piece fits the adjacent hole. Try nearby vertex-aligned translations of that pose.
+ if($('magnet').checked&&piece.used){
+  let others=state.pieces.filter((p,i)=>i!==selected&&p.used).map(p=>p.poly),b=Geo.bounds([mirrored]);
+  const allowed=q=>{let box=Geo.bounds([q]);return box.x>=8&&box.r<=767&&box.y>=8&&box.b<=672&&Geo.overlap([...others,q])<1e-6};
+  let candidates=[{q:mirrored,d:0}],radius=Math.hypot(b.r-b.x,b.b-b.y)+1;
+  for(let v of mirrored)for(let other of others)for(let w of other){let dx=w[0]-v[0],dy=w[1]-v[1],d=Math.hypot(dx,dy);if(d<=radius)candidates.push({q:Geo.move(mirrored,dx,dy),d})}
+  let valid=candidates.filter(v=>allowed(v.q)).map(v=>({...v,perimeter:Geo.perimeter([...others,v.q])}));
+  valid.sort((a,b)=>Math.abs(a.perimeter-b.perimeter)>1e-5?a.perimeter-b.perimeter:a.d-b.d);
+  if(valid.length)mirrored=valid[0].q;
+ }
+ let placed=placeSelected(mirrored,{magnetic:false,feedback:true});
+ if(placed)say('Pezzo ribaltato a specchio. Il magnete cerca un incastro vicino senza sovrapposizioni.');
+ render();persist();
+}
 
-function pos(e){let r=C.getBoundingClientRect();return [(e.clientX-r.left)*1100/r.width,(e.clientY-r.top)*680/r.height]}
+function pos(e){let r=C.getBoundingClientRect(),scale=Math.min(r.width/1100,r.height/680),x=(r.width-1100*scale)/2,y=(r.height-680*scale)/2;return [(e.clientX-r.left-x)/scale,(e.clientY-r.top-y)/scale]}
 function pointerDown(e){if(busy())return;let v=pos(e);C.focus();C.setPointerCapture(e.pointerId);if(state.phase==='compose'){for(let i=6;i>=0;i--)if(Geo.inside(v,state.pieces[i].poly)){selected=i;drag={kind:'piece',last:v,pointerStart:v,start:clone(state.pieces[i])};break}}else if(state.phase==='paint'){undo.push({colors:state.pieces.map(p=>p.color),strokes:clone(state.strokes),colored:state.colored});if(undo.length>25)undo.shift();if(state.divisions){let p=[...used()].reverse().find(p=>Geo.inside(v,p.poly));if(p){p.color=$('color').value;state.colored=true}}else{state.strokes.push({color:$('color').value,size:+$('brushSize').value,erase:$('eraser').checked,points:[v]});state.colored=true;drag={kind:'ink'}}}else if(state.phase==='scene'){let b=Geo.bounds(used().map(p=>p.poly)),cx=(b.x+b.r)/2,cy=(b.y+b.b)/2;for(let i=state.copies.length-1;i>=0;i--){let s=state.copies[i],a=-s.angle*Math.PI/180,dx=v[0]-cx-s.x,dy=v[1]-cy-s.y,w=[(dx*Math.cos(a)-dy*Math.sin(a))/s.scale+cx,(dx*Math.sin(a)+dy*Math.cos(a))/s.scale+cy];if(used().some(p=>Geo.inside(w,p.poly))){sceneSelected=i;drag={kind:'scene',last:v};scaleControls();break}}}render();persist()}
 C.addEventListener('pointerdown',pointerDown);
 C.addEventListener('pointermove',e=>{if(!drag||Date.now()<hintUntil)return;let v=pos(e);if(drag.kind==='piece'){let p=state.pieces[selected];placeSelected(Geo.move(drag.start.poly,v[0]-drag.pointerStart[0],v[1]-drag.pointerStart[1]));drag.last=v}if(drag.kind==='ink'){let s=state.strokes.at(-1);if(s.points.length<6000)s.points.push(v)}if(drag.kind==='scene'){let p=state.copies[sceneSelected];p.x+=v[0]-drag.last[0];p.y+=v[1]-drag.last[1];drag.last=v}render()});
