@@ -1,3 +1,14 @@
+AGGIORNAMENTO 1.1 — 27 ottobre 2026
+845 asserzioni automatiche superate, incluse 42 nuove verifiche sui problemi segnalati:
+- avvio con zero pezzi sul piano;
+- conteggio di sette pezzi invariato in 16 traslazioni, anche presso i bordi;
+- perimetro del quadrato 4 anche prima del fissaggio;
+- rifiuto di sovrapposizioni da spostamento e rotazione, controllo del ribaltamento;
+- contenimento dei pezzi nel piano e perimetro non fuorviante con magnete disattivato.
+Prova nel browser della versione corretta: avvio dal vassoio; trascinamento del primo triangolo con conteggio 1/7 e perimetro 2,414; tentativo di sovrapporre il secondo con arresto prima della collisione, conteggio 2/7 e perimetro 4,828.
+Le prove sono state eseguite sulla copia locale aggiornata, non sul sito GitHub ancora da aggiornare.
+
+RESOCONTO DELLA VERSIONE PRECEDENTE
 COLLAUDO — Tangram 1.0
 Data: 27 ottobre 2026
 
