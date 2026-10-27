@@ -22,3 +22,7 @@ body:has(#workspace) footer{padding:5px 16px;flex:none;font-size:11px}
 @media(max-width:900px){.studio{grid-template-columns:175px minmax(0,1fr)}.boardHeader{font-size:10px}#status{font-size:11px}}
 @media(max-width:620px){body:has(#workspace){height:auto;min-height:100dvh;overflow:auto}body:has(#workspace) main{overflow:visible;padding:6px}#workspace{height:auto}.studio{display:flex;min-height:auto}.studio aside{overflow:visible}.boardWrap{min-height:0}#board{flex:none;height:auto;aspect-ratio:1100/680}.heading #subtitle{font-size:12px}.heading .pill{padding:4px 10px}.under{font-size:10px}}
 @media print{body:has(#workspace){height:auto;overflow:visible}#board{height:auto;flex:none}.studio aside{display:none}}
+
+/* v1.4: bitmap and hit testing fill the viewport, without inert letterbox bands. */
+#board{object-fit:fill;flex-basis:0;min-width:0}
+@media(max-width:620px){#board{flex-basis:auto}}
