@@ -1,0 +1,36 @@
+ATTRIBUZIONI E FONTI — Tangram di Claudia Bartoli
+
+Sagome di riferimento:
+Progetto: shgalus/tangram
+Autore: Stanisław Galus
+Fonte: https://github.com/shgalus/tangram/blob/master/src/tangram.shapes.js
+Licenza: https://github.com/shgalus/tangram/blob/master/LICENSE
+
+Sono stati utilizzati i contorni denominati Cat, Dog, Camel, Parrot e Bird.
+Modifiche: risoluzione geometrica dei contorni in sette pezzi congruenti al Tangram standard; normalizzazione delle coordinate; ricostruzione delle soluzioni; tre varianti per ogni modello, ottenute spostando o ruotando un pezzo senza sovrapposizioni; traduzione dei nomi.
+Le varianti sono identificate come tali e non sono venti diversi animali tradizionali.
+Le fonti ulteriori citate nel dataset originale sono conservate nel campo source di sagome.js. Non sono state incorporate scansioni o immagini dei libri citati.
+
+Il testo integrale della licenza di origine segue. La riserva dei diritti dell’app non restringe i diritti qui concessi sui materiali di terzi.
+
+MIT License
+
+Copyright (c) 2018 Stanisław Galus
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

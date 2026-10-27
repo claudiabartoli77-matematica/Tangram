@@ -1,0 +1,27 @@
+TANGRAM — La geometria prende forma
+© 2026 Claudia Bartoli. Tutti i diritti riservati, salvo quanto espressamente consentito di seguito e i materiali di terzi indicati in ATTRIBUZIONI.txt.
+
+LICENZA PER USO DIDATTICO NON COMMERCIALE
+
+1. Ambito
+Questa licenza riguarda il codice e i contenuti originali dell’applicazione. Non attribuisce esclusiva sul gioco tradizionale del Tangram, sulle idee matematiche, sulle forme geometriche o sui materiali di terzi.
+
+2. Usi consentiti
+È consentito utilizzare gratuitamente l’app per attività didattiche non commerciali, in classe, su LIM, su dispositivi personali o scolastici e per studio individuale. Sono consentite le copie tecniche necessarie a tali usi e le copie di sicurezza. È consentito stampare ed esportare le creazioni degli utilizzatori per documentare attività didattiche non commerciali, mantenendo le attribuzioni pertinenti.
+L’utilizzo nell’ordinaria attività di una scuola non diventa commerciale per il solo fatto che il docente percepisce una retribuzione.
+
+3. Usi non autorizzati
+Non sono autorizzati la vendita, il noleggio, la monetizzazione tramite pubblicità, l’inserimento in prodotti o servizi a pagamento, la distribuzione del pacchetto su altre piattaforme, la ripubblicazione pubblica dell’app o di versioni modificate e lo sfruttamento commerciale, salvo preventiva autorizzazione scritta di Claudia Bartoli.
+Non è consentita la rimozione dei crediti o l’attribuzione a sé della paternità del progetto. Si può condividere il collegamento alla versione pubblicata dall’autrice.
+Restano salvi gli usi inderogabilmente consentiti dalla legge e i diritti previsti dalle condizioni della piattaforma di pubblicazione, ove applicabili.
+
+4. Materiali di terzi
+Le coordinate di riferimento della raccolta di sagome provengono dal progetto shgalus/tangram, con licenza MIT. La relativa attribuzione e il testo integrale della licenza sono in ATTRIBUZIONI.txt. I diritti concessi da quella licenza non sono limitati da questa licenza d’uso dell’app. Le illustrazioni paesaggistiche e il motore dell’app sono realizzati per questo progetto; non vengono caricati contenuti esterni durante il gioco.
+
+5. Creazioni degli utilizzatori
+I diritti sugli apporti originali realizzati dagli utilizzatori restano ai rispettivi titolari. La presente licenza non trasferisce all’autrice i diritti sui lavori degli alunni. L’esportazione di una sagoma derivata dai materiali di terzi conserva le attribuzioni pertinenti.
+
+6. Conservazione e disponibilità
+L’app è fornita nello stato in cui si trova. Il salvataggio nel browser non costituisce un servizio di archiviazione garantita. Per conservare i lavori utilizzare l’esportazione dell’archivio. Restano ferme le responsabilità non escludibili secondo la legge applicabile.
+
+Versione 1.0 — 27 ottobre 2026

@@ -1,0 +1,48 @@
+TANGRAM — La geometria prende forma
+Claudia Bartoli · versione 1.0 · 27 ottobre 2026
+
+FILE
+index.html — interfaccia dell’app
+style.css — grafica e adattamento degli schermi
+app.js — attività, disegno, trasformazioni, salvataggio, esportazione
+geometry.js — geometria, aree, intersezioni, confronto di sagome e perimetro
+sagome.js — archivio delle 20 sfide con le coordinate dei sette pezzi
+privacy.html — informativa sul funzionamento e sui dati locali
+licenza.html — riepilogo dei diritti e delle attribuzioni
+LICENZA.txt — licenza integrale per uso didattico non commerciale
+ATTRIBUZIONI.txt — fonte dei modelli di riferimento e licenza MIT
+LEGGIMI.txt — queste istruzioni
+COLLAUDO.txt — controlli eseguiti e limiti di verifica
+
+COSA CONTIENE
+• Crea: sette pezzi classici, trascinamento mouse/tocco, rotazioni di 45°, ribaltamento, selettore pezzi, movimento da tastiera, aggancio magnetico facoltativo a vertici e lati.
+• Mostra le frazioni: 1/4, 1/4, 1/8, 1/16, 1/16, 1/8, 1/8.
+• Fissa la figura: verifica sette pezzi interamente sul piano, senza sovrapposizioni. Sono consentiti contatti puntuali, pezzi separati e fori; il perimetro conta tutti i contorni, anche quelli dei fori.
+• Colorazione con secchiello nei singoli pezzi oppure con pennello libero, dimensione, gomma del pennello e annullamento delle ultime 25 operazioni. I livelli sono separati: nascondere le divisioni mostra un’impronta bianca e il disegno libero; riattivarle recupera i colori assegnati con il secchiello.
+• Scopri la figura: venti sagome, estrazione casuale, aiuto di tre secondi con blocco dei movimenti e contatore. L’esclusione dalle estrazioni avviene dopo verifica, colorazione e salvataggio. Dopo venti sfide si può iniziare una nuova raccolta conservando la galleria.
+• Caccia alle frazioni: tutti i sedici valori da 1/16 a 1, semplificati; scelta diretta o casuale; verifica della somma e dell’assenza di sovrapposizioni.
+• Trasforma: sette sfondi incorporati; traslazione, rotazione e scala proporzionale dal 25% al 200%; fino a dodici copie della figura. Le misure in basso si riferiscono sempre all’originale; il pannello indica i fattori di variazione di area e perimetro della copia selezionata.
+• Due gallerie: Le mie creazioni e Scopri la figura. Sfide ordinate per numero crescente di aiuti; conservazione dei tentativi e indicazione del record per sagoma. Riprova accessibile dalla galleria.
+• Salvataggio del lavoro in corso e delle gallerie nel browser, esportazione/importazione JSON, PNG artistico, PNG geometrico, stampa e schermo intero se supportato dal dispositivo.
+
+NOTA SULLA RACCOLTA
+Le venti sfide NON corrispondono a venti diversi animali tradizionali. Sono cinque modelli di riferimento (gatto, cane, cammello, pappagallo, uccello), ognuno con tre varianti geometriche. I nomi distinguono i modelli di riferimento dalle varianti. Tutti e venti sono verificati con sette pezzi congruenti e senza sovrapposizioni. Una futura raccolta di venti animali classici distinti richiederà nuove sagome di riferimento e il relativo controllo geometrico e delle licenze.
+
+DATI E PRIVACY
+Non ci sono account, pubblicità, statistiche, cookie propri o chiamate di rete effettuate dal codice del gioco. I file vengono serviti dall’hosting; quando ospita il sito, GitHub Pages registra dati tecnici secondo la propria informativa. privacy.html distingue queste attività dal salvataggio locale.
+I progressi dipendono da dispositivo, profilo browser e indirizzo del sito. Cambiando browser o indirizzo non vengono trasferiti automaticamente. Su dispositivi condivisi sono visibili agli utilizzatori dello stesso profilo.
+Esporta regolarmente l’archivio. La cancellazione dei dati del browser può eliminare progressi e gallerie; la navigazione privata può non conservarli. Se lo spazio termina, compare un avviso e puoi esportare i dati in memoria.
+L’importazione aggiunge/aggiorna le creazioni per identificativo e ripristina il lavoro in corso contenuto nell’archivio.
+Per evitare raccolte non necessarie, non inserire nomi reali o dati personali nei titoli e nelle descrizioni. Se aggiungi strumenti di analisi, moduli o cambi hosting, aggiorna l’informativa.
+
+DIRITTI
+© 2026 Claudia Bartoli. Uso didattico non commerciale; tutti i diritti riservati sugli elementi originali nei termini di LICENZA.txt. I materiali di terzi indicati in ATTRIBUZIONI.txt conservano la propria licenza MIT. La pubblicazione in un repository pubblico rende leggibile e tecnicamente copiabile il codice: la licenza disciplina gli usi, non impedisce materialmente il download.
+
+USO SU PC, TABLET E LIM
+L’app impiega Pointer Events e controlli tattili. Su tablet e LIM è preferibile l’orientamento orizzontale. Su schermi stretti i controlli si dispongono sotto il piano. Per la stampa può essere utile l’orientamento orizzontale del foglio.
+Il collaudo nel browser remoto non sostituisce una prova su una LIM o su un tablet fisico. Su Safari/iPad le opzioni di download, stampa e schermo intero dipendono dalle funzioni messe a disposizione dal browser.
+
+RIFERIMENTI TECNICI
+GitHub Pages: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+Privacy GitHub Pages: https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages
+Sagome: https://github.com/shgalus/tangram

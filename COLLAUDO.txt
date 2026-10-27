@@ -1,0 +1,39 @@
+COLLAUDO — Tangram 1.0
+Data: 27 ottobre 2026
+
+CONTROLLI AUTOMATICI SUPERATI
+803 asserzioni geometriche e funzionali, eseguite con JavaScript in Node:
+- area del quadrato iniziale, assenza di sovrapposizioni, perimetro normalizzato uguale a 4;
+- per ciascuna delle 20 sagome: sette pezzi, congruenza delle distanze fra vertici rispetto ai pezzi standard, aree corrette, somma 1, assenza di sovrapposizioni;
+- confronto di sagome indipendente dall’ordine dei pezzi;
+- riconoscimento di sovrapposizioni e di contorni non coincidenti;
+- perimetro con tratti di lato condivisi parzialmente;
+- frazioni ottenibili: tutti i sedici valori da 1/16 a 1;
+- passaggio dalla composizione alla colorazione e controllo del perimetro mostrato;
+- sfida riconosciuta anche scambiando triangoli congruenti;
+- sfida non esclusa prima di colorazione e salvataggio;
+- estrazione che esclude le sfide già salvate;
+- contatore aiuti e blocco della rotazione durante l’intervallo di tre secondi;
+- verifica della frazione 3/8 e rifiuto delle sovrapposizioni;
+- duplicazione e rotazione della figura nella scena;
+- validità della struttura dei dati salvati e serializzazione/deserializzazione.
+Controllo sintattico dei file JavaScript superato.
+
+PROVE NEL BROWSER CHROME REMOTO
+- apertura della pagina e caricamento dei file locali;
+- ricomposizione del quadrato, fissaggio e lettura del perimetro 4;
+- colorazione con secchiello, titolo e salvataggio nella galleria;
+- recupero del lavoro dopo ricaricamento;
+- apertura del laboratorio Trasforma, scelta dello sfondo Mare, duplicazione e comando di rotazione;
+- apertura di Scopri la figura, conteggio dell’aiuto e messaggio di blocco della rotazione mentre è visibile la soluzione.
+
+LIMITI DEL COLLAUDO
+Non è stato eseguito un collaudo su tablet, smartphone o LIM fisici, né una prova di stampa su stampante reale. L’interfaccia include regole responsive, Pointer Events e controlli tattili, ma il comportamento sui dispositivi va verificato nell’ambiente effettivo di utilizzo. Le opzioni di schermo intero e download possono dipendere dal browser.
+Non è stata effettuata una pubblicazione nel repository GitHub dell’autrice; il pacchetto è pronto per il caricamento manuale.
+
+GEOMETRIA E TOLLERANZE
+La verifica delle sfide confronta le superfici complessive tramite intersezioni dei poligoni convessi, senza imporre la soluzione interna originaria. Accetta una differenza simmetrica relativa fino allo 0,8%, verificando separatamente le sovrapposizioni. L’aggancio rende possibili contatti precisi; piccoli spazi lasciati fra i pezzi possono incidere sul perimetro effettivo. Il perimetro è calcolato sulle coordinate, comprende i contorni dei fori ed è arrotondato a tre decimali nella visualizzazione.
+Le misure del pannello si riferiscono all’originale. Nella scena, una copia di scala k ha perimetro k volte quello originale e area k² volte quella originale.
+
+RACCOLTA
+Sono presenti cinque animali di riferimento e tre varianti per ciascuno. Non si tratta di venti animali classici distinti. Vedere LEGGIMI.txt e ATTRIBUZIONI.txt.
