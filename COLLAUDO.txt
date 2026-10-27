@@ -1,3 +1,6 @@
+AGGIORNAMENTO 1.2 — 27 ottobre 2026
+1074 controlli automatici superati. Regressioni: contatto con bordo a distanza zero non impedisce l’allineamento dei vertici; incastro di ciascuno dei sette pezzi in 8 orientamenti e nelle due immagini speculari; perimetro del quadrato ricostruito sempre 4; riempimento conservato nel rendering libero. Browser Chrome: pulsante quadrato, perimetro 4, riempimento e cambio modalità, prato fiorito. Nessuna verifica su dispositivo fisico tablet/LIM.
+
 AGGIORNAMENTO 1.1 — 27 ottobre 2026
 845 asserzioni automatiche superate, incluse 42 nuove verifiche sui problemi segnalati:
 - avvio con zero pezzi sul piano;
